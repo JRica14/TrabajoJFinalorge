@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "233527661656",
+    "project_id": "trabajojfinalorge",
+    "storage_bucket": "trabajojfinalorge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233527661656:android:e871df79aeca176c48a62d",
+        "android_client_info": {
+          "package_name": "com.example.trabajojfinalorge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233527661656-l3226kctamskumkfl4aa9vfsif3f9icg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcTOvEdS1miebck7LTfRMyGzuBZYr51Qk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233527661656-l3226kctamskumkfl4aa9vfsif3f9icg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
