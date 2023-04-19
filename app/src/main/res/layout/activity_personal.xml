@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".inicio">
-
+    tools:context=".Personal">
     <LinearLayout
         android:layout_width="412dp"
         android:layout_height="71dp"
@@ -44,7 +43,7 @@
             android:layout_marginLeft="1dp"
             android:layout_marginTop="50dp"
             android:layout_weight="1"
-            android:background="#00FFFFFF"
+            android:background="#90E4DFDF"
             android:scaleType="centerInside"
             android:src="@drawable/_023_04_19_08_52_38_logo_persona___b_squeda_de_google_removebg_preview" />
 
@@ -57,7 +56,7 @@
             android:layout_marginLeft="1dp"
             android:layout_marginTop="1dp"
             android:layout_weight="1"
-            android:background="#90E4DFDF"
+            android:background="#00FFFFFF"
             android:scaleType="centerInside"
             android:src="@drawable/pngwing_com" />
 
@@ -75,4 +74,5 @@
             android:src="@drawable/_04090" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
