@@ -12,6 +12,9 @@ class Inicio : AppCompatActivity() {
         val binding = ActivityInicioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.website.clearCache(false)
+        binding.website.settings.javaScriptEnabled=true
+        binding.website.loadUrl("https://www.fisioretiro.com/")
 
         binding.formularios.setOnClickListener {
             val intent= Intent(this, Formulario::class.java)

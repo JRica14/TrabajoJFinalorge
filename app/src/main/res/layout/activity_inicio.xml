@@ -7,6 +7,7 @@
     tools:context=".inicio">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="412dp"
         android:layout_height="71dp"
         android:background="#AEDEF4"
@@ -25,7 +26,32 @@
             android:src="@drawable/_023_04_19_08_32_05_bienvenido_a_fisioretiro_com___fisioretiro_com_removebg_preview" />
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="583dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <WebView
+                android:id="@+id/website"
+                android:layout_width="match_parent"
+                android:layout_height="578dp" />
+        </LinearLayout>
+    </ScrollView>
+
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="416dp"
         android:layout_height="70dp"
         android:background="#AEDEF4"
@@ -75,4 +101,5 @@
             android:src="@drawable/_04090" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
