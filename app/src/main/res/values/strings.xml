@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">TrabajoJFinalorge</string>
+    <string-array name="localizacion">
+        <item>Hombro</item>
+        <item>Rodilla</item>
+        <item>Cuello</item>
+        <item>Tobillo</item>
+        <item>Muñeca</item>
+        <item>Codo</item>
+        <item>Espalda</item>
+    </string-array>
+    <string-array name="tipo">
+        <item>Luxación</item>
+        <item>Rotura Muscular</item>
+        <item>Fractura</item>
+        <item>Pinzamiento</item>
+        <item>Esguince</item>
+    </string-array>
+    <string-array name="ejercicios">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
 </resources>
