@@ -4,102 +4,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="0dp"
     tools:context=".inicio">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="412dp"
-        android:layout_height="71dp"
-        android:background="#AEDEF4"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:layout_weight="1"
-            android:src="@drawable/_023_04_19_08_32_05_bienvenido_a_fisioretiro_com___fisioretiro_com_removebg_preview" />
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="583dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:ignore="WebViewLayout">
+            android:layout_height="71dp"
+            android:background="#AEDEF4"
+            android:orientation="horizontal">
 
-            <WebView
-                android:id="@+id/website"
-                android:layout_width="match_parent"
-                android:layout_height="578dp" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:src="@drawable/_023_04_19_08_32_05_bienvenido_a_fisioretiro_com___fisioretiro_com_removebg_preview" />
         </LinearLayout>
-    </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="416dp"
-        android:layout_height="70dp"
-        android:background="#AEDEF4"
-        android:orientation="horizontal"
-        android:paddingTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/personal"
-            android:layout_width="115dp"
-            android:layout_height="47dp"
-            android:layout_margin="1dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginTop="50dp"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:scaleType="centerInside"
-            android:src="@drawable/_023_04_19_08_52_38_logo_persona___b_squeda_de_google_removebg_preview" />
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp">
 
-        <ImageButton
-            android:id="@+id/inicio"
-            android:layout_width="115dp"
-            android:layout_height="47dp"
-            android:layout_margin="1dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginTop="1dp"
-            android:layout_weight="1"
-            android:background="#90E4DFDF"
-            android:scaleType="centerInside"
-            android:src="@drawable/pngwing_com" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="WebViewLayout">
 
-        <ImageButton
-            android:id="@+id/formularios"
-            android:layout_width="115dp"
-            android:layout_height="47dp"
-            android:layout_margin="1dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginTop="1dp"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:scaleType="centerInside"
-            android:src="@drawable/_04090" />
+                    <WebView
+                        android:id="@+id/website"
+                        android:layout_width="wrap_content"
+                        android:layout_height="620dp" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#AEDEF4"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:layout_margin="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/linearLayout">
+
+            <ImageButton
+                android:id="@+id/personal"
+                android:layout_width="115dp"
+                android:layout_height="47dp"
+                android:layout_margin="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="50dp"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:scaleType="centerInside"
+                android:src="@drawable/_023_04_19_08_52_38_logo_persona___b_squeda_de_google_removebg_preview" />
+
+            <ImageButton
+                android:id="@+id/inicio"
+                android:layout_width="115dp"
+                android:layout_height="47dp"
+                android:layout_margin="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="#90E4DFDF"
+                android:scaleType="centerInside"
+                android:src="@drawable/pngwing_com" />
+
+            <ImageButton
+                android:id="@+id/formularios"
+                android:layout_width="115dp"
+                android:layout_height="47dp"
+                android:layout_margin="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"
+                android:scaleType="centerInside"
+                android:src="@drawable/_04090" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
