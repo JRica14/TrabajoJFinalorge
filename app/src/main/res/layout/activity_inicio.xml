@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="0dp"
     tools:context=".inicio">
 
     <LinearLayout
@@ -21,6 +20,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="71dp"
+            android:layout_weight="0.5"
             android:background="#AEDEF4"
             android:orientation="horizontal">
 
@@ -33,42 +33,33 @@
                 android:src="@drawable/_023_04_19_08_32_05_bienvenido_a_fisioretiro_com___fisioretiro_com_removebg_preview" />
         </LinearLayout>
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_weight="10">
 
-            <ScrollView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="5dp">
+                android:orientation="vertical"
+                tools:ignore="WebViewLayout">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    tools:ignore="WebViewLayout">
+                <WebView
+                    android:id="@+id/website"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </ScrollView>
 
-                    <WebView
-                        android:id="@+id/website"
-                        android:layout_width="wrap_content"
-                        android:layout_height="620dp" />
-                </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_margin="0dp"
+            android:layout_weight="0.5"
             android:background="#AEDEF4"
             android:orientation="horizontal"
             android:paddingTop="10dp"
-            android:layout_margin="0dp"
             app:layout_constraintBottom_toBottomOf="@id/linearLayout">
 
             <ImageButton
