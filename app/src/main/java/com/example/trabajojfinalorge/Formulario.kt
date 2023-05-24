@@ -1,13 +1,15 @@
 package com.example.trabajojfinalorge
 
+
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
+
 import android.util.Log
-import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.trabajojfinalorge.databinding.ActivityFormularioBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -16,7 +18,9 @@ class Formulario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityFormularioBinding.inflate(layoutInflater)
-        var texto=""
+        val principio="Buenos Días,\n" +
+                "Aquí le dejamos su rutina de rehabilitación. Si tienes alguna duda con su rutina, no dudes en preguntarnos a este mismo correo.\n\n\n"
+        var texto=principio
         setContentView(binding.root)
 
         val db = FirebaseFirestore.getInstance()
@@ -31,8 +35,9 @@ class Formulario : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         binding.button3.setOnClickListener {
-            texto=""
+            texto=principio
             var numero = 1
             ejer
                 .whereEqualTo("Ubicación", binding.spinner.selectedItem.toString())
@@ -41,7 +46,7 @@ class Formulario : AppCompatActivity() {
                 .get()
                 .addOnSuccessListener { result ->
                     for (document in result) {
-                        texto += "Ejercicio $numero \n" + "Imagen: " + "${document.data["Imagen"]}\n" + "Repeticiones: " + "${document.data["Cantidad"]}\n\n\n "
+                        texto += "·Ejercicio $numero\n\n" +"Repeticiones:${document.data["Cantidad"]} \n"+ "Imagen:\n${document.data["Imagen"]}" + "\n\n\n\n\n"
                         //binding.textView28.text=binding.textView28.text.toString()+"Ejercicio $numero \n"+"Imagen: "+"${document.data["Imagen"]}\n"+"Repeticiones: "+"${document.data["Cantidad"]}\n\n\n "
                         numero++
                     }
@@ -50,6 +55,7 @@ class Formulario : AppCompatActivity() {
                     Log.d(TAG, "Error getting documents: ", exception)
                 }
             Toast.makeText(this,"Datos Recogidos", Toast.LENGTH_LONG).show()
+
         }
         binding.button2.setOnClickListener {
             val email=Intent(Intent.ACTION_SEND)
@@ -57,7 +63,8 @@ class Formulario : AppCompatActivity() {
             email.setType("text/plain");
             email.putExtra(Intent.EXTRA_EMAIL, arrayOf(binding.editTextText.text.toString()))
             email.putExtra(Intent.EXTRA_SUBJECT, "Rutina de ejercicios de Rehabilitación")
-            email.putExtra(Intent.EXTRA_TEXT,texto)
+            texto+="\nUn cordial saludo, Fisio Retiro.\n"
+            email.putExtra(Intent.EXTRA_TEXT, texto)
 
             try {
                 //start email intent
@@ -70,4 +77,5 @@ class Formulario : AppCompatActivity() {
             }
         }
     }
+
 }
