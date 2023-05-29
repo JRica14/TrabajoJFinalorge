@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">TrabajoJFinalorge</string>
     <string-array name="tipo">
+        <item>-- No Seleccionado --</item>
         <item>Luxación</item>
         <item>Rotura</item>
         <item>Esguince</item>
     </string-array>
     <string-array name="localizacion">
+        <item>-- No Seleccionado --</item>
         <item>Hombro</item>
         <item>Rodilla</item>
         <item>Tobillo</item>
@@ -13,6 +15,7 @@
         <item>Codo</item>
     </string-array>
     <string-array name="ejercicios">
+        <item>-- No Seleccionado --</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
