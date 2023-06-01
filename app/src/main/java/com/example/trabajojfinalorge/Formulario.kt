@@ -37,24 +37,30 @@ class Formulario : AppCompatActivity() {
 
 
         binding.button3.setOnClickListener {
-            texto=principio
-            var numero = 1
-            ejer
-                .whereEqualTo("Ubicación", binding.spinner.selectedItem.toString())
-                .whereEqualTo("Tipo", binding.spinner2.selectedItem.toString())
-                .limit(binding.spinner3.selectedItem.toString().toLong())
-                .get()
-                .addOnSuccessListener { result ->
-                    for (document in result) {
-                        texto += "·Ejercicio $numero\n\n" +"Repeticiones:${document.data["Cantidad"]} \n"+ "Imagen:\n${document.data["Imagen"]}" + "\n\n\n\n\n"
-                        //binding.textView28.text=binding.textView28.text.toString()+"Ejercicio $numero \n"+"Imagen: "+"${document.data["Imagen"]}\n"+"Repeticiones: "+"${document.data["Cantidad"]}\n\n\n "
-                        numero++
+            if(binding.spinner.selectedItem.toString()!="-- No Seleccionado --" && binding.spinner2.selectedItem.toString()!="-- No Seleccionado --") {
+                texto = principio
+                var numero = 1
+                ejer
+                    .whereEqualTo("Ubicación", binding.spinner.selectedItem.toString())
+                    .whereEqualTo("Tipo", binding.spinner2.selectedItem.toString())
+                    .limit(binding.spinner3.selectedItem.toString().toLong())
+                    .get()
+                    .addOnSuccessListener { result ->
+                        for (document in result) {
+                            texto += "·Ejercicio $numero\n\n" + "Repeticiones:${document.data["Cantidad"]} \n" + "Imagen:\n${document.data["Imagen"]}" + "\n\n\n\n\n"
+                            //binding.textView28.text=binding.textView28.text.toString()+"Ejercicio $numero \n"+"Imagen: "+"${document.data["Imagen"]}\n"+"Repeticiones: "+"${document.data["Cantidad"]}\n\n\n "
+                            numero++
+                        }
                     }
-                }
-                .addOnFailureListener { exception ->
-                    Log.d(TAG, "Error getting documents: ", exception)
-                }
-            Toast.makeText(this,"Datos Recogidos", Toast.LENGTH_LONG).show()
+                    .addOnFailureListener { exception ->
+                        Log.d(TAG, "Error getting documents: ", exception)
+                    }
+                Toast.makeText(this, "Datos Recogidos", Toast.LENGTH_LONG).show()
+                binding.button2.isEnabled=true
+            }else {
+                Toast.makeText(this, "Rellena todos los campos", Toast.LENGTH_LONG).show()
+                binding.button2.isEnabled=false
+            }
 
         }
         binding.button2.setOnClickListener {
